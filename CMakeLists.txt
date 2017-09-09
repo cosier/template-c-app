@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.6)
 
-set( APP_LIB_NAME $ENV{APP_LIB_NAME})
-set( APP_EXE_NAME $ENV{APP_MAIN_EXE})
-set( APP_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
-set( VENDOR "${APP_ROOT}/vendor")
+set (APP_LIB_NAME sample_app)
+set (APP_EXE_NAME smpl)
+
+set (APP_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
+set (VENDOR "${APP_ROOT}/vendor")
 
 project(${APP_LIB_NAME})
 
