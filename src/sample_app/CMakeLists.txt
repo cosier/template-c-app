@@ -30,9 +30,10 @@ find_library( ncurses_lib ncurses )
 
 # Link Library support: lib${APP_LIB_NAME}
 target_include_directories( ${APP_LIB_NAME} PUBLIC ./ )
+
 target_include_directories( ${APP_LIB_NAME}
   PUBLIC
-  ${APP_ROOT}/vendor/ubelt/src )
+  ${VENDOR}/ubelt/src )
 
 target_link_libraries( ${APP_LIB_NAME}
   m # C Math Lib

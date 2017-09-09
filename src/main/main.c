@@ -3,11 +3,11 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <factorii/core.h>
+#include <sample_app/core.h>
 #include "version.h"
 
 void print_usage() {
-    printf("Usage: factorii [options]\n\n");
+    printf("Usage: app [options]\n\n");
 
     printf("\nOptions:\n");
     printf("  -h, --help     Show application usage\n");
@@ -15,12 +15,12 @@ void print_usage() {
 }
 
 void print_version() {
-    printf("Factorii v%s.%s.%s\nrevision: %s\nbuild date: %s\n\n",
+    printf("App v%s.%s.%s\nrevision: %s\nbuild date: %s\n\n",
            APP_VERSION_MAJOR, APP_VERSION_MINOR, APP_VERSION_PATCH,
            APP_VERSION_BUILD, APP_VERSION_DATE);
 
     printf("Authors: Bailey Cosier <bailey@cosier.ca>\n");
-    printf("Homepage: https://github.com/cosier/factorii\n\n");
+    printf("Homepage: https://github.com/cosier/template-c-app\n\n");
 }
 
 

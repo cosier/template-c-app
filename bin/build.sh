@@ -32,18 +32,19 @@ if [[ "$BUILD_REVISION" == "" ]]; then
 fi
 
 echo
-echo -e " BUILD_TYPE::     $BUILD_TYPE"
+echo -e " APP_LIB_NAME:    $APP_LIB_NAME"
+echo -e " APP_MAIN_EXE:    $APP_MAIN_EXE"
+echo -e " BUILD_TYPE:      $BUILD_TYPE"
 echo -e " BUILD_REVISION:  $BUILD_REVISION "
 echo -e " BUILD_TIMESTAMP: $BUILD_TIMESTAMP"
 echo -e "-------------------------------------\n"
 
+
 # If Makefile doesn't exist, initiate cmake to generate it.
 if [[ ! -f $BUILD_DIR/Makefile ]]; then
   cmake \
-    -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
     -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
-    -DAPP_LIB_NAME=$APP_LIB_NAME \
-    -DAPP_MAIN_EXE=$APP_MAIN_EXE \
+    -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
     ..
 
   if [ ! $? -eq 0 ]; then

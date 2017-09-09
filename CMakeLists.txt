@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.6)
 set( APP_LIB_NAME $ENV{APP_LIB_NAME})
 set( APP_EXE_NAME $ENV{APP_MAIN_EXE})
 set( APP_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
+set( VENDOR "${APP_ROOT}/vendor")
 
 project(${APP_LIB_NAME})
 
@@ -11,6 +12,14 @@ set (APP_VERSION_MINOR 1)
 set (APP_VERSION_PATCH 0)
 set (APP_VERSION_BUILD $ENV{BUILD_REVISION})
 set (APP_VERSION_DATE  $ENV{BUILD_TIMESTAMP})
+
+if ("${APP_EXE_NAME}" STREQUAL "")
+  message (FATAL_ERROR "APP_EXE_NAME is undefined")
+endif()
+
+if ("${APP_LIB_NAME}" STREQUAL "")
+  message (FATAL_ERROR "APP_LIB_NAME is undefined")
+endif()
 
 if ("$ENV{BUILD_REVISION}" STREQUAL "")
   message (FATAL_ERROR "BUILD_REVISION not specified in ENV")
@@ -24,7 +33,6 @@ endif()
 if ("$ENV{CMAKE_BUILD_TYPE}" STREQUAL "debug")
   add_definitions(-D_DEBUG_)
 endif()
-
 
 # This project uses C11 Standard
 set( CMAKE_C_STANDARD 11 )
@@ -52,5 +60,4 @@ configure_file (
 
 include_directories(
   "${APP_ROOT}/src"
-  "${APP_ROOT}/vendor/ubelt/src"
 )
