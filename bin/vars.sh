@@ -10,11 +10,11 @@ BUILD_DIR=$ROOT/build
 APP_LIB_NAME=$(cat $ROOT/CMakeLists.txt \
   | grep -m1 APP_LIB_NAME | sed 's/[a-z(\s].*APP_LIB_NAME\s\(.*\))/\1/')
 
-APP_MAIN_EXE=$(cat $ROOT/CMakeLists.txt \
+APP_EXE_NAME=$(cat $ROOT/CMakeLists.txt \
   | grep -m1 APP_EXE_NAME | sed 's/[a-z(\s].*APP_EXE_NAME\s\(.*\))/\1/')
 
 
-EXE_NAME=$APP_MAIN_EXE
+EXE_NAME=$APP_EXE_NAME
 EXE_LINK=$ROOT/bin/$EXE_NAME
 EXE_BUILD=$BUILD_DIR/src/main/$EXE_NAME
 
